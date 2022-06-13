@@ -1,0 +1,23 @@
+<form [formGroup]="blogForm" class="mt-5" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="author" class="form-label">Author: </label>
+        <input type="text" class="form-control" id="author" aria-describedby="authorHelp" formControlName="author"
+            required>
+        <div id="authorHelp" class="form-text">Please enter your name.</div>
+    </div>
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" formControlName="title" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="content" class="form-label">Content</label>
+        <input type="text" class="form-control" id="content" formControlName="content" required>
+    </div>
+
+    <span>
+        <p class="text-danger" *ngIf="blogForm.status=='INVALID'">please fill all the inputs </p>
+    </span>
+
+    <button [disabled]="blogForm.status=='INVALID'" type="submit" class="btn btn-primary">Submit</button>
+</form>

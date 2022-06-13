@@ -1,0 +1,12 @@
+<div class="row mt-5">
+
+    <span><a class="btn btn-primary  float-end" routerLink="/add"> Add Blog </a></span>
+</div>
+
+
+<div class="row mt-5">
+    <div class="col-3" *ngFor="let blog of blogs">
+        <app-blog-card [blog]="blog"></app-blog-card>
+    </div>
+
+</div>

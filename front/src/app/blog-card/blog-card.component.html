@@ -1,0 +1,16 @@
+<div [ngClass]="{'card':true, 'border-success':blog.votes>0, 'border-danger':blog.votes<0, 'mb-3':true}"
+    style="max-width: 18rem;">
+    <div class="card-header">Author: {{blog.author}}</div>
+    <div [ngClass]="{'card-body ':true,'text-success':blog.votes>0, 'text-danger':blog.votes<0}">
+        <h5 class="card-title">{{blog.title}}</h5>
+        <p class="card-text">{{blog.content}}</p>
+        <a [routerLink]="['/detail', blog._id]" class="card-link text-muted">show Details</a>
+        <span class="card-text float-end">
+            <i (click)="increment()"
+                [ngClass]="{'bi': true, 'bi-hand-thumbs-up': like==false, 'bi-hand-thumbs-up-fill':like==true }"></i>
+            {{blog.votes}}
+            <i (click)="decrement()"
+                [ngClass]="{'bi': true, 'bi-hand-thumbs-down': dislike==false, 'bi-hand-thumbs-down-fill':dislike==true}"></i>
+        </span>
+    </div>
+</div>

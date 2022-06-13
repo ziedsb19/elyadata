@@ -1,0 +1,7 @@
+FROM node:12-buster
+COPY front /app
+WORKDIR /app
+RUN npm install --force
+RUN npm install -g @angular/cli@11.2.19
+EXPOSE 4200
+ENTRYPOINT ["ng", "serve", "--proxy-config", "proxy.conf.json" , "--host=0.0.0.0", "--disable-host-check"]  

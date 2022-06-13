@@ -1,0 +1,6 @@
+{
+    "/api": {
+      "target": "http://fastapi:8000",
+      "secure": false
+    }
+}

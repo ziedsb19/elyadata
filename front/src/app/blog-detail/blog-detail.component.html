@@ -1,0 +1,13 @@
+<div class="card text-center mt-5" *ngIf="blog">
+    <div class="card-header">
+        BlogDetail
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{blog.title}}</h5>
+        <p class="card-text">{{blog.content}}</p>
+        <i href="#" class="text-muted">{{blog.author}}</i>
+    </div>
+    <div class="card-footer text-muted">
+        {{blog.votes}} votes
+    </div>
+</div>
